@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piedra, Papel o Tijera</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        .contenedor {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+        }
+        .opcion {
+            width: 100px;
+            height: 100px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Piedra, Papel o Tijera</h1>
+    <div class="contenedor">
+        <img id="miEleccion" class="opcion" src="piedra.png" onclick="cambiarEleccion()">
+        <img id="enemigoEleccion" class="opcion" src="piedra.png">
+    </div>
+    <h2 id="resultado"></h2>
+    <button onclick="jugar()">Jugar</button>
+    <script>
+        const opciones = ['piedra', 'papel', 'tijera'];
+        let indiceEleccion = 0;
+
+        function cambiarEleccion() {
+            indiceEleccion = (indiceEleccion + 1) % 3;
+            document.getElementById('miEleccion').src = opciones[indiceEleccion] + '.png';
+        }
+
+        function jugar() {
+            const eleccionUsuario = opciones[indiceEleccion];
+            const eleccionComputadora = opciones[Math.floor(Math.random() * 3)];
+            document.getElementById('enemigoEleccion').src = eleccionComputadora + '.png';
+            
+            let resultado = '';
+            if (eleccionUsuario === eleccionComputadora) {
+                resultado = 'Es un empate!';
+            } else if (
+                (eleccionUsuario === 'piedra' && eleccionComputadora === 'tijera') ||
+                (eleccionUsuario === 'papel' && eleccionComputadora === 'piedra') ||
+                (eleccionUsuario === 'tijera' && eleccionComputadora === 'papel')
+            ) {
+                resultado = '¡Ganaste! 🎉 (' + eleccionUsuario + ' vence a ' + eleccionComputadora + ')';
+            } else {
+                resultado = 'Perdiste 😢 (' + eleccionComputadora + ' vence a ' + eleccionUsuario + ')';
+            }
+            document.getElementById('resultado').innerText = resultado;
+        }
+    </script>
+</body>
+</html>

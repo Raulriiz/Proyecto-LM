@@ -1,0 +1,13 @@
+.cuerpo {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 50px;
+    background-color: red;
+}
+
+.contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
