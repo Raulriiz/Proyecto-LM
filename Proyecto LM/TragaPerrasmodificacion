@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tragaperras</title>
-    <link rel="stylesheet" href="LM.css">
+    <link rel="stylesheet" href="PaginaEstilos.css">
 </head>
 <body class="cuerpo">
 <h1 class="titulo">Fortuna Dorada</h1>
