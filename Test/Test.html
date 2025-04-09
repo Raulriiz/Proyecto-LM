@@ -1,0 +1,26 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Máquina Tragaperras</title>
+    <link rel="stylesheet" href="Test.css">
+</head>
+<body>
+    <h1>Máquina Tragaperras</h1>
+    <div class="MaquinaSlot">
+        <div class="S">
+            <span id="S1">🍒</span>
+            <span id="S2">🍋</span>
+            <span id="S3">🍊</span>
+        </div>
+        <p>Dinero: $<span id="Dinero">100</span></p>
+        <p>Apuesta: $<span id="Apuesta">10</span></p>
+        <div class="Controles">
+            <button onclick="game.AumentarApuesta()">Aumentar Apuesta</button>
+            <button onclick="game.DisminuirApuesta()">Disminuir Apuesta</button>
+            <button onclick="game.Girar()">Jugar</button>
+        </div>
+    </div>
+    <script src="Test.js"></script>
+</body>
+</html>
